@@ -1,17 +1,29 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i+1; j < array.length; j++) {
+      if (array[i] + array[j] === target) return true;
+    }
+  }
+  return false;
 }
 
 /* 
-  Write the Big O time complexity of your function here
+  time: O(n^2)
+  space: O(n)
 */
 
 /* 
-  Add your pseudocode here
+  1. Create a for loop to iterate over each number in the array
+      a. For each number in the array, add that number with the next number in the array. 
+      b. Return true if the sum of those two numbers equals the target number
+      c. continue if the sum of those two numbers does not equal the target number
+  2. If no matches are found, return false
 */
 
 /*
-  Add written explanation of your solution here
+  The function hasTargetSum() will be passed an array of numbers, and a target number. The goal of the
+  function is to see if adding any two numbers of the array will sum to the target number. The function
+  will return true if two numbers sum to the target number, and false if no two numbers do.
 */
 
 // You can run `node index.js` to view these console logs
